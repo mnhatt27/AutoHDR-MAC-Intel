@@ -37,7 +37,7 @@ def main():
     ], check=True, cwd=ROOT, env=env)
     application = dist / "AutoHDR.app"
     executable = application / "Contents" / "MacOS" / "AutoHDR"
-    subprocess.run(["/usr/bin/lipo", "-verify_arch", args.arch, str(executable)], check=True)
+    subprocess.run(["/usr/bin/lipo", str(executable), "-verify_arch", args.arch], check=True)
     subprocess.run(["/usr/bin/codesign", "--verify", "--deep", "--strict", str(application)], check=True)
     # A malformed .app or missing bundled Tk must fail the job, not produce an artifact.
     subprocess.run([str(executable), "--smoke-test"], check=True, timeout=45, cwd=dist)
