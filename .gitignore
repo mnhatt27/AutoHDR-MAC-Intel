@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv*/
+MAC/build/
+MAC/dist/
+client_source/build/
+client_source/dist/
+*.exe
+*.db
+*.db-*
+*.log
+photoshoot_config.json
+vps_server/config.json
+.DS_Store
